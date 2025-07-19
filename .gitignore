@@ -1,0 +1,8 @@
+# Virtual environment
+venv/
+.env    
+
+# Folder with datasets
+email_manager/project/data/
+
+.DS_Store
