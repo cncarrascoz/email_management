@@ -4,5 +4,8 @@ venv/
 
 # Folder with datasets
 email_manager/project/data/
+email_manager/project/data/raw/
+email_manager/project/data/interim/
+email_manager/project/data/processed/
 
 .DS_Store
