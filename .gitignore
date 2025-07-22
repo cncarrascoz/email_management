@@ -9,3 +9,11 @@ email_manager/project/data/interim/
 email_manager/project/data/processed/
 
 .DS_Store
+__pycache__/
+
+# Any parquet files
+email_manager/project/data/*.parquet
+email_manager/project/data/raw/*.parquet
+email_manager/project/data/interim/*.parquet
+email_manager/project/data/processed/*.parquet
+email_manager/project/mlruns/*.parquet

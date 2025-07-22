@@ -1,4 +1,4 @@
-# labels.yaml
+# labels.yml
 labels:
   - name: action_required
     description: "Any email that clearly requests a reply, confirmation, rsvp, or next step."

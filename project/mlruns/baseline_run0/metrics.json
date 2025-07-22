@@ -1,0 +1,34 @@
+{
+  "macro": {
+    "precision": 0.460385472141687,
+    "recall": 0.6003073748235038,
+    "f1": 0.4525841049286083
+  },
+  "micro": {
+    "precision": 0.4218181818181818,
+    "recall": 0.7116564417177914,
+    "f1": 0.5296803652968036
+  },
+  "thresholds": {
+    "action_required": 0.6,
+    "company_business": 0.4,
+    "purely_personal": 0.35,
+    "logistics": 0.5,
+    "employment": 0.35,
+    "newsletter": 0.5,
+    "spam": 0.2,
+    "empty": 0.35,
+    "fwd_chain": 0.45000000000000007
+  },
+  "label_names": [
+    "action_required",
+    "company_business",
+    "purely_personal",
+    "logistics",
+    "employment",
+    "newsletter",
+    "spam",
+    "empty",
+    "fwd_chain"
+  ]
+}
