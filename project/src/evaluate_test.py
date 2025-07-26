@@ -11,7 +11,7 @@ texts = df["subject"].astype(str) + " " + df["clean_body"].astype(str)
 true_labels = df["label"]
 
 # Load run information
-model_dir = Path("../mlruns/baseline_run0")
+model_dir = Path("../mlruns/run3")
 pipe = load(model_dir / "model.joblib")
 mlb = load(model_dir / "mlb.joblib")
 thresholds = np.load(model_dir / "thresholds.npy")
@@ -30,4 +30,5 @@ for row_probs in probs:
         pred_labels.append(label_names[np.argmax(row_probs)])  # otherwise fallback to top prob
 
 # Evaluate
-print(classification_report(true_labels, pred_labels, labels=label_names, zero_division=0))
+with open("../results/class_rep_tfidf_run3.txt", "w") as f:
+    f.write(classification_report(true_labels, pred_labels, labels=label_names, zero_division=0))
