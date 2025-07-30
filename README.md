@@ -37,7 +37,7 @@ Results can be reproduced by following these steps:
    bash setup_env.sh
    ```
 
-### Training the Model
+### Training the TF-IDF Model
 
 ```bash
 python -m project.src.train \
@@ -71,6 +71,10 @@ mlflow ui --backend-store-uri ./mlruns
 ```
 
 Then open http://127.0.0.1:5000 in your browser to view experiment results.
+
+### Training the DistilBERT Model
+
+Please refer to the following [Kaggle Notebook](https://www.kaggle.com/code/celncz/exploring-dbert-pytorch).
 
 ## Directory Structure
 
