@@ -3,7 +3,8 @@ import numpy as np
 from pathlib import Path
 from joblib import load
 import json
-from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
+import matplotlib.pyplot as plt
 
 # Load test set
 df = pd.read_parquet("../data/processed/test_labeled_200_0.parquet")
@@ -29,5 +30,19 @@ for row_probs in probs:
     else:
         pred_labels.append(label_names[np.argmax(row_probs)])  # otherwise fallback to top prob
 
-# Evaluate
+# # Evaluate
+# with open("../results/class_rep_tfidf_run3.txt", "w") as f:
+#     f.write(classification_report(true_labels, pred_labels, labels=label_names, zero_division=0))
 print(classification_report(true_labels, pred_labels, labels=label_names, zero_division=0))
+
+# Generate confusion matrix
+cm = confusion_matrix(true_labels, pred_labels, labels=label_names)
+
+# Display the confusion matrix
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=label_names)
+fig, ax = plt.subplots(figsize=(10, 10))
+disp.plot(ax=ax, xticks_rotation='vertical')
+plt.title("Confusion Matrix - TF-IDF Baseline")
+plt.tight_layout()
+plt.savefig("../results/confusion_matrix_tfidf_baseline.png")  # Optional: save to file
+plt.show()

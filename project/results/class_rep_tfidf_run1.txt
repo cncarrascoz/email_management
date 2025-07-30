@@ -1,0 +1,15 @@
+                  precision    recall  f1-score   support
+
+ action_required       0.11      0.57      0.18        14
+company_business       0.14      0.29      0.19        45
+ purely_personal       0.67      0.05      0.10        37
+       logistics       0.64      0.35      0.45        26
+      employment       0.00      0.00      0.00         5
+      newsletter       1.00      0.17      0.29         6
+            spam       0.00      0.00      0.00         1
+           empty       0.00      0.00      0.00         1
+       fwd_chain       0.80      0.12      0.21        65
+
+        accuracy                           0.20       200
+       macro avg       0.37      0.17      0.16       200
+    weighted avg       0.54      0.20      0.21       200
