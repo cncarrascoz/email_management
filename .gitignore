@@ -17,3 +17,5 @@ email_manager/project/data/raw/*.parquet
 email_manager/project/data/interim/*.parquet
 email_manager/project/data/processed/*.parquet
 email_manager/project/mlruns/*.parquet
+
+mlruns/
