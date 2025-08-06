@@ -22,4 +22,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest email_manager/gmail_integration/tests/
+        run: pytest gmail_integration/tests/
