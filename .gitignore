@@ -19,3 +19,7 @@ email_manager/project/data/processed/*.parquet
 email_manager/project/mlruns/*.parquet
 
 mlruns/
+
+# Any authorization credentials
+email_manager/gmail_integration/auth/credentials.json
+email_manager/gmail_integration/auth/token.json

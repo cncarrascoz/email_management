@@ -11,7 +11,7 @@ import base64
 import email
 from pathlib import Path
 
-from auth.authorize import get_gmail_service
+from gmail_integration.auth.authorize import get_gmail_service
 
 
 def cmd_auth(args):
