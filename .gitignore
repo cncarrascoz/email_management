@@ -10,6 +10,7 @@ email_manager/project/data/processed/
 
 .DS_Store
 __pycache__/
+.pytest_cache/
 
 # Any parquet files
 email_manager/project/data/*.parquet
@@ -19,3 +20,7 @@ email_manager/project/data/processed/*.parquet
 email_manager/project/mlruns/*.parquet
 
 mlruns/
+
+# Any authorization credentials
+email_manager/gmail_integration/auth/credentials.json
+email_manager/gmail_integration/auth/token.json
