@@ -11,7 +11,7 @@ import base64
 import email
 from pathlib import Path
 
-from gmail_integration.auth.authorize import get_gmail_service
+from auth.authorize import get_gmail_service
 
 
 def cmd_auth(args):
@@ -20,6 +20,14 @@ def cmd_auth(args):
     print(f"✅ Authenticated! Gmail address: {profile['emailAddress']}")
 
 
+def cmd_list_labels(args):
+    svc = get_gmail_service()
+    results = svc.users().labels().list(userId="me").execute()
+    labels = results.get("labels", [])
+    print(f"📦  {len(labels)} labels:")
+    for lbl in labels:
+        print(f" - {lbl['name']}")
+
 
 def main():
     ap = argparse.ArgumentParser(prog="gmail-cli", description="Gmail ML integration CLI")
@@ -27,6 +35,9 @@ def main():
 
     sub_auth = sub.add_parser("auth", help="Authenticate & show account email")
     sub_auth.set_defaults(func=cmd_auth)
+
+    sub_lbls = sub.add_parser("list-labels", help="List Gmail labels")
+    sub_lbls.set_defaults(func=cmd_list_labels)
 
     args = ap.parse_args()
     args.func(args)
