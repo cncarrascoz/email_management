@@ -11,7 +11,7 @@ import base64
 import email
 from pathlib import Path
 
-from auth.authorize import get_gmail_service
+from gmail_integration.auth.authorize import get_gmail_service
 
 
 def cmd_auth(args):
@@ -87,7 +87,7 @@ def main():
 
     sub_fetch = sub.add_parser("fetch", help="Fetch recent emails")
     sub_fetch.add_argument("--max", type=int, default=50, help="Number of emails")
-    sub_fetch.add_argument("--out", default="gmail_integration/out/emails.json")
+    sub_fetch.add_argument("--out", default="out/emails.json")
     sub_fetch.set_defaults(func=cmd_fetch)
 
     args = ap.parse_args()
